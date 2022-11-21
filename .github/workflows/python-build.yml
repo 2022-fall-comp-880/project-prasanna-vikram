@@ -1,0 +1,12 @@
+name: Python Build for COMP-880
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  python-build-comp-880:
+    name: Build
+    uses: 2022-fall-comp-880/workflows/.github/workflows/python-build.yml@main
+    secrets: inherit
