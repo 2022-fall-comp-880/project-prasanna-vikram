@@ -1,0 +1,11 @@
+Title,Genre,Premiere,Runtime,IMDB Score,Language
+My Own Man,Documentary,13-Dec-14,81,6.4,English
+The Other One: The Long Strange Trip of Bob Weir,Documentary,22-May-15,83,7.3,English
+Hot Girls Wanted,Documentary,29-May-15,84,6.1,English
+"What Happened, Miss Simone?",Documentary,26-Jun-15,84,7.6,English
+Tig,Documentary,17-Jul-15,80,7.4,English
+Keith Richards: Under the Influence,Documentary,18-Sep-15,81,7.1,English
+Winter on Fire: Ukraine's Fight for Freedom,Documentary,9-Oct-15,91,8.4,English/Ukranian/Russian
+Beasts of No Nation,War drama,16-Oct-15,136,7.7,English/Akan
+A Very Murray Christmas,Comedy / Musical,4-Dec-15,56,5.5,English
+The Ridiculous 6,Western,11-Dec-15,119,4.8,English
