@@ -1,8 +1,10 @@
 # Netflix Original Films & IMDB Score
 
 **Author**: Lakshmi Prasanna Malempati 
-**Last updated Date**: 30 Nov 2022
 
+**Reviewer** : Vikram
+
+**Date**: 26 Nov 2022
 
 ## Motivation 
   The Motivation behind choosing this dataset is based on IMDB score, Genre type we can recommend movies or series available in Netflix to any person in their preferred languages.  
@@ -29,9 +31,13 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 * The `DESIGN.md` file should be created in which we describe the design implementation steps in markdown file for all the methods, functions we will write in `apps.main` module .
 
 ## Expected Results 
+
 1. Genre as keys in string format and list of languages for that genre type as values are produced as output to 'Netflix Originals present in each genre' in dictionary format.
+
 2. Average runtime for each genre in float format are taken as value to corresponding Genre as key where genre is in string format.
-3. IMDB score ranges in float format are keys and list of titles in string format as values to the keys are generated as output in dictionary format.
+
+3. IMDB score ranges in float format as keys and list of titles in string format as values to the keys are generated as output in dictionary format.
+
 ## New Python Packages or Modules 
 
 * `import os`: The OS module in Python provides functions for creating and removing a directory (folder), fetching its contents, changing and identifying the current directory.
