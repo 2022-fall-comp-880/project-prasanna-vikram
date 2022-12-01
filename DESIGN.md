@@ -1,5 +1,5 @@
 ## DESIGN DOCUMENT
-
+**Author** : Lakshmi Prasanna
 ## class NetflixOriginals:
     
     Represent a data-set of Netflix Originals information.
