@@ -1,5 +1,8 @@
+
 ## DESIGN DOCUMENT
+
 **Contributors** : Lakshmi Prasanna, Vikram
+
 ## class NetflixOriginals:
     
     Represent a data-set of Netflix Originals information.
@@ -31,6 +34,7 @@
 
         filename: filename to write data to
 
+
 * Open txt file in write mode using `open()` function.
 * Taking for-loop iterate for each element of title, genre, runtime, IMDB score and language in `self.movie_info` list.
 * Create a variable , using f-strings concatinate title, genre, runtime, IMDB score and language
@@ -61,6 +65,7 @@
 list of languages in string format as values to that genre.
 
 2. What is the average runtime for each genre ? 
+
 ### def average_runtime_by_genre(self) -> dict:
         
         Create a dictionary of average runtime by genres .
@@ -81,7 +86,8 @@ list of languages in string format as values to that genre.
 * Map or assign the average runtime in float format as value to corresponding genre as key of accumulator dictionary variable.
 * Iterate the loop until end and return the accumulator dictionary as an output.
 
-3. Get the list of movie titles based on the range of IMDB scores 
+3. Get the list of movie titles based on the range of IMDB scores
+
 ### def imdb_score_ranges(self) -> dict:
         
         Group imdb scores into ranges.
@@ -102,7 +108,6 @@ list of languages in string format as values to that genre.
     to that imdb score range in float format which is a key in string format.
  * Else create a list of movie titles as values and map that to imdb score range as keys in accumulator dictionary variable.
 * After completion of loop iteration finally return the accumulator dictionary variable where IMDB score range are keys and 
-list of titles in string format as values in that range of imdb scores.
 
 ### def str(self):
       Create string representation of data.
@@ -119,4 +124,20 @@ list of titles in string format as values in that range of imdb scores.
  * Append the data into accumulator variable `movies_info` .
 * Close the opened file using `close()` function.
 * Return list as an output to `NetflixOriginals`.
+
+
+### def str(self):
+        Create string representation of data.
+* Return the `self.movie_info` as output string
+
+### def read_dataset(filename: str) -> PlayerData:
+        Read a CSV text file that holds 5-element records.
+
+* Create an empty list as an accumulator.
+* Open the file `filename` in read mode as `file_open`.
+* Iterate each element in  `file_open.readlines()` by taking for loop.
+ * perform stripping on the hard code data in txt file and separate each element with `,`, convert te entire data into tuples from.
+ * Append the data into accumulator variable  .
+* Close the opened file using `close()` function.
+* Return NetflixOriginals list as an output from hard code data.
 
