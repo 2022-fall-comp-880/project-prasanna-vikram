@@ -1,0 +1,11 @@
+Amateur,Sports-drama,96,5.9,English
+Win It All,Comedy,88,6.2,English
+Dolly Parton: A MusiCares Tribute,Documentary,55,6.5,English
+Night in Paradise,Drama,132,6.7,Korean
+Have You Ever Seen Fireflies?,Comedy,114,6.2,Turkish
+Thunder Force,Superhero-Comedy,105,4.4,English
+Tony Robbins: I Am Not Your Guru,Documentary,116,6.7,English
+Ghosts of Sugar Land,Documentary,21,5.5,English
+Joan Didion: The Center Will Not Hold,Documentary,98,7.5,English
+Strong Island,Documentary,107,6.4,English
+
