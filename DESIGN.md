@@ -1,5 +1,5 @@
 ## DESIGN DOCUMENT
-**Author** : Lakshmi Prasanna
+**Contributors** : Lakshmi Prasanna, Vikram
 ## class NetflixOriginals:
     
     Represent a data-set of Netflix Originals information.
@@ -10,7 +10,7 @@
     
 
 ### def __init__(self, movie_info: list):
-        
+       
         Create and initialize the class attributes.
 
         Attributes: a list of tuples of:
@@ -23,7 +23,7 @@
 * Initialize `self.movie_info` variable to movie_info by accessing with self parameter.        
 
 ### def write(self, filename: str):
-        
+       
         Write a CSV file with Netflix Originals info.
 
         A record is a row in the file, with 5 columns, corresponding to
@@ -37,10 +37,11 @@
   as a string for every Netflix Original.
 * Assign the whole f-string value to that variable.
 * Add or write that variable in another CSV file which is Netflix Originals data and result is a CSV file with all Netflix Originals data.
-        
+  
+1. Find the languages based on genre type.
 ### def language_by_genre(self) -> dict:
         
-        create a dictionary of languages by genre type .
+        Create a dictionary of languages by genre type .
 
         Creates and returns a dictionary whose keys are genres in string format
              and values are lists of languages corresponding to the genre.
@@ -59,8 +60,9 @@
 * After completion of loop iteration finally return the accumulator dictionary variable where genres are keys and 
 list of languages in string format as values to that genre.
 
+2. What is the average runtime for each genre ? 
 ### def average_runtime_by_genre(self) -> dict:
-
+        
         Create a dictionary of average runtime by genres .
 
         Creates and returns a dictionary whose keys are genres in string format
@@ -76,9 +78,10 @@ list of languages in string format as values to that genre.
 * Create and initialize an empty dictionary as an accumulator variable.
 * Taking for loop iterate through each element in `self.movie_info`.
 * Import `statistics` module and using `mean()` function in statistics module find the average runtime.
-* Map or assign the average runtime in float format as value to corresponding genre as key of accumulator dictionary variable
+* Map or assign the average runtime in float format as value to corresponding genre as key of accumulator dictionary variable.
 * Iterate the loop until end and return the accumulator dictionary as an output.
 
+3. Get the list of movie titles based on the range of IMDB scores 
 ### def imdb_score_ranges(self) -> dict:
         
         Group imdb scores into ranges.
@@ -102,11 +105,11 @@ list of languages in string format as values to that genre.
 list of titles in string format as values in that range of imdb scores.
 
 ### def str(self):
-        Create string representation of data.
+      Create string representation of data.
 
 * Return the `self.movie_info` as output string
 
-### def read_dataset(filename: str) -> NetflixData:
+### def read_dataset(filename: str) -> NetflixOriginals:
         Read a CSV text file that holds 5-element records.
 
 * Create an empty list  `movies_info` as an accumulator.
@@ -115,5 +118,5 @@ list of titles in string format as values in that range of imdb scores.
  * perform stripping on the hard code data in txt file and separate each element with `,`, convert te entire data into tuples from.
  * Append the data into accumulator variable `movies_info` .
 * Close the opened file using `close()` function.
-* Return list as an output to `NetflixData`.
+* Return list as an output to `NetflixOriginals`.
 
