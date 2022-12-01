@@ -1,3 +1,8 @@
+
+## DESIGN DOCUMENT
+**Author** : Lakshmi Prasanna
+
+
 ## class NetflixOriginals:
     
     Represent a data-set of Netflix Originals information.
@@ -29,7 +34,8 @@
 
         filename: filename to write data to
 
-* Open txt file in write mode using open() function.
+
+* Open txt file in write mode using `open()` function.
 * Taking for-loop iterate for each element of title, genre, runtime, IMDB score and language in `self.movie_info` list.
 * Create a variable , using f-strings concatinate title, genre, runtime, IMDB score and language
   as a string for every Netflix Original.
@@ -40,7 +46,7 @@
         
         create a dictionary of languages by genre type .
 
-        Creates and returns a dictionary whose keys are genres  in string format
+        Creates and returns a dictionary whose keys are genres in string format
              and values are lists of languages corresponding to the genre.
 
         Return:
@@ -48,28 +54,36 @@
                 keys: str, representing genre
                 value: list of strings, representing languages corresponding
                 to the genre .
+
 * Create and initialize an empty dictionary and assign it to an accumulator pattern variable.
-* Taking for loop iterate through each element in self.movie_info .
+* Taking for loop iterate through each element in `self.movie_info` .
+
  * Check if the language is already present in the accumulator dictionary, if it satisfies:
    * Append the language as value to existing genre which is a key in string format.
  * Else create a new list of languages as value and map that to genre as key in accumulator dictionary variable.
 * After completion of loop iteration finally return the accumulator dictionary variable where genres are keys and 
 list of languages in string format as values to that genre.
 
-### def average_imdb_score_by_genre(self) -> dict:
 
-        Create a dictionary of average IMDB score by genres .
+### def average_runtime_by_genre(self) -> dict:
+
+        Create a dictionary of average runtime by genres .
 
         Creates and returns a dictionary whose keys are genres in string format
-            and values are averages of all IMDB scores corresponding to the same
+            and values are averages of runtime corresponding to the same
             genre.
 
         Returns:
             dictionary
                 keys: str, representing genre.
-                value: float, average of IMDB scores corresponding to the same
+                value: float, average of runtime corresponding to the same
                     genre type .
-* 
+
+* Create and initialize an empty dictionary as an accumulator variable.
+* Taking for loop iterate through each element in `self.movie_info`.
+* Import `statistics` module and using `mean()` function in statistics module find the average runtime.
+* Map or assign the average runtime in float format as value to corresponding genre as key of accumulator dictionary variable
+* Iterate the loop until end and return the accumulator dictionary as an output.
 
 ### def imdb_score_ranges(self) -> dict:
         
@@ -83,7 +97,7 @@ list of languages in string format as values to that genre.
             keys: float, representing IMDB score ranges
             values: list of strings, with titles in that IMDB score ranges
 
-* Taking nested if conditional statements group the IMDB scores into ranges.
+* Taking nested-if conditional statements group the IMDB scores into various ranges.
 * Create and initialize an empty dictionary and assign it to an accumulator pattern variable.
 * Taking for loop iterate through each element in `self.movie_info` .
  * Check if that rating range is present in the accumulator dictionary, if it satisfies:
@@ -91,7 +105,23 @@ list of languages in string format as values to that genre.
     to that imdb score range in float format which is a key in string format.
  * Else create a list of movie titles as values and map that to imdb score range as keys in accumulator dictionary variable.
 * After completion of loop iteration finally return the accumulator dictionary variable where IMDB score range are keys and 
-list of titles in string format as values to that genre.
+
+### def str(self):
+        Create string representation of data.
+
+* Return the `self.movie_info` as output string
+
+### def read_dataset(filename: str) -> NetflixData:
+        Read a CSV text file that holds 5-element records.
+
+* Create an empty list  `movies_info` as an accumulator.
+* Open the file `filename` in read mode as `file_open`.
+* Iterate each element `ai` in  `file_open.readlines()` by taking for loop.
+ * perform stripping on the hard code data in txt file and separate each element with `,`, convert te entire data into tuples from.
+ * Append the data into accumulator variable `movies_info` .
+* Close the opened file using `close()` function.
+* Return list as an output to `NetflixData`.
+
 
 ### def str(self):
         Create string representation of data.
@@ -107,3 +137,4 @@ list of titles in string format as values to that genre.
  * Append the data into accumulator variable  .
 * Close the opened file using `close()` function.
 * Return NetflixOriginals list as an output from hard code data.
+
