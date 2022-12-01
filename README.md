@@ -1,12 +1,15 @@
 ### Motivation  :
 
-* The motivation for choosing this  particular dataset is I am very curious to investigate about the movies released in Netflix in different languages in different genre by every year .
+* The motivation for choosing this  particular dataset is we are very curious to investigate about the movies released in Netflix in different languages in different genre by every year .
 * This Dataset has complete information about title of the film ,genre ,Runtime ,IMDB score ,langauge.
-* Every year more than 100+ movies are released in Netflix in different languages .
-* Netflix is the one the top rating streaming service among amazon,HBO max , so I want to know more about this dataset .
 
-* For this I need the information of movies released in netflix by different genres .
-* So I am using dataset `https://www.kaggle.com/datasets/luiscorter/netflix-original-films-imdb-scores` this dataset has separate columns and we use some dictionaries and files like CSV ,OS ,Unit test files to get the output .
+### Description :
+
+* Every year more than 100+ movies are released in Netflix in different languages .
+* Netflix is the one the top rating streaming service among amazon,HBO max , so are want to know more about this dataset .
+
+* For this we need the information of movies released in netflix by different genres .
+* So we are using dataset `https://www.kaggle.com/datasets/luiscorter/netflix-original-films-imdb-scores` .
 
 -------------
 ### Investigation Questions 
