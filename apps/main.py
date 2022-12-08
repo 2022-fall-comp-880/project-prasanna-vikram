@@ -5,6 +5,7 @@ Authors:
   - https://github.com/lm1298
   - https://github.com/Vikramkumar8915
 """
+import csv
 
 
 class NetflixOriginals:
@@ -27,6 +28,7 @@ class NetflixOriginals:
              Runtime : integer
              language : string
          """
+        self.movies_info = movie_info
 
     def write(self, filename: str):
         """
@@ -37,8 +39,14 @@ class NetflixOriginals:
 
          filename: filename to write data to
         """
+        with open(filename, 'w', encoding='utf8') as file_obj:
+            for Title, Genre, Runtime, IMDB_Score, Language in \
+                                    self.movies_info:
+                movie_info_row = f'{Title},{Genre},{Runtime},{IMDB_Score},' \
+                                 f'{Language}\n'
+                file_obj.write(movie_info_row)
 
-    def language_by_genre(self) -> dict:
+    def languages_by_genre(self) -> dict:
         """
         Create a dictionary of languages by genre type .
 
@@ -83,9 +91,10 @@ class NetflixOriginals:
     def str(self):
         """ Create string representation of data."""
 
-    @staticmethod
-    def read_dataset(filename: str) -> NetflixOriginals:
-        """Read a CSV text file that holds 5-element records.
+
+@staticmethod
+def read_dataset(filename: str) -> NetflixOriginals:
+    """Read a CSV text file that holds 5-element records.
 
         Title of movie, Run time, language , IMDB rating , Genre.
         """
