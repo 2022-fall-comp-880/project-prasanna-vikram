@@ -26,9 +26,8 @@ class TestNetflixOriginals(TestCase):
     def test_average_runtime_by_genre_five(self):
         """Test using `self.NetflixOriginals_data_5`."""
         actual_res2 = self.NetflixOriginals_data_5.average_runtime_by_genre()
-        expected_res2 = {'Drama': 132.0, 'Romantic comedy': 133.0,
-                         'Documentary': 39.0, 'Science fiction': 126.0,
-                         'Action comedy': 108.0}
+        expected_res2 = {'Romantic comedy': 133.0, 'Drama': 132.0,
+                         'Action comedy': 108.0, 'Documentary': 82.5}
         self.assertDictEqual(actual_res2, expected_res2)
 
     def test_average_runtime_by_genre_ten(self):

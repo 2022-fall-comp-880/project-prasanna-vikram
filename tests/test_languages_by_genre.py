@@ -26,10 +26,9 @@ class TestNetflixOriginals(TestCase):
     def test_languages_by_genre_five(self):
         """Test using `self.NetflixOriginals_data_5`."""
         actual_res2 = self.NetflixOriginals_data_5.languages_by_genre()
-        expected_res2 = {'Action comedy': {'English'}, 'Romantic comedy':
-                         {'Hindi'}, 'Drama': {'Korean'}, 'Science fiction':
-                         {'English'},
-                         'Documentary': {'Hindi'}}
+        expected_res2 = {'Action comedy': {'English'},
+                         'Romantic comedy': {'Hindi'}, 'Drama': {'Korean'},
+                         'Documentary': {'English', 'Hindi'}}
         self.assertDictEqual(actual_res2, expected_res2)
 
     def test_languages_by_genre_ten(self):
