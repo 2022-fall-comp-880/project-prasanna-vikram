@@ -120,6 +120,14 @@ def read_dataset(filename: str) -> NetflixOriginals:
 
     Title of movie, Run time, language , IMDB rating , Genre.
     """
+    movies = []
+    with open(filename) as file:
+        file_read = csv.reader(file, delimiter=',')
+        file_read._next_()
+        for row in file_read:
+            movies.append(tuple(row))
+    return NetflixOriginals(movies)
+
 
 
 def main():
