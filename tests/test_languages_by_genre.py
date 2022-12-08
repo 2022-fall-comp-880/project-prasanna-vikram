@@ -23,7 +23,7 @@ class TestNetflixOriginals(TestCase):
         input_file = data_dir + "/data_1.txt"
         read_dataset(input_file)
         actual_res1 = self.NetflixOriginals_data_1.languages_by_genre()
-        expected_res1 = {'Documentary': {'English'}}
+        expected_res1 = {'Teen comedy horror': {'English'}}
         print(actual_res1)
         self.assertDictEqual(actual_res1, expected_res1)
         # self.fail("TODO: Implement test")
