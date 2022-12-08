@@ -20,16 +20,18 @@ class TestNetflixOriginals(TestCase):
     def test_imdb_score_ranges_one(self):
         """Test using `self.NetflixOriginals_data_1`."""
         actual_res1 = self.NetflixOriginals_data_1.imdb_score_ranges()
-        expected_res1 = {'6.0-7.0 Rating': ['The Babysitter']}
+        expected_res1 = {'more than 9 Rating': ['The Babysitter']}
         self.assertDictEqual(actual_res1, expected_res1)
 
     def test_imdb_score_ranges_five(self):
         """Test using `self.NetflixOriginals_data_5`."""
         actual_res2 = self.NetflixOriginals_data_5.imdb_score_ranges()
-        expected_res2 = {'5.0-6.0 Rating': ['The Do-Over', 'Mute'],
-                         '7.0-8.0 Rating': ['Love per Square Foot',
-                                            'Ladies First'],
-                         '6.0-7.0 Rating': ['Night in Paradise']}
+        expected_res2 = {'5.0-6.0 Rating': ['The Do-Over'],
+                         '7.0-8.0 Rating':
+                         ['Love per Square Foot', 'Ladies First'],
+                         '6.0-7.0 Rating': ['Night in Paradise'],
+                         'more than 9 Rating': ['Mute']}
+
         self.assertDictEqual(actual_res2, expected_res2)
 
     def test_imdb_score_ranges_ten(self):
