@@ -1,20 +1,19 @@
 
-
 ## DESIGN DOCUMENT
 
 **Contributors** : Lakshmi Prasanna, Vikram
 
 ## class NetflixOriginals:
-    
+    """
     Represent a data-set of Netflix Originals information.
 
     Concepts:
         Data processing functionality.
         Reading and writing from CSV files.
-    
+    """
 
 ### def __init__(self, movie_info: list):
-       
+       """
         Create and initialize the class attributes.
 
         Attributes: a list of tuples of:
@@ -23,28 +22,29 @@
             IMDB rating: float
             Runtime : integer
             language : string
+        """
 
 * Initialize `self.movies_info` variable to movie_info by accessing with self parameter.        
 
 ### def write(self, filename: str):
-       
+        """
         Write a CSV file with Netflix Originals info.
 
         A record is a row in the file, with 5 columns, corresponding to
         Title,Genre,Runtime,IMDB Score and Language.
 
         filename: filename to write data to
-
+        """
 * Open the txt file `file_obj` in write mode using `open()` function.
-* Taking for-loop iterate for each element of Title, Genre, Runtime, IMDB_Score, Language in `self.movies_info` list.
-* Create a variable , using f-strings concatinate Title, Genre, Runtime, IMDB_Score, Language
+* Taking for-loop iterate for each element of title, genre, runtime, imdb_Score, language in `self.movies_info` list.
+* Create a variable , using f-strings concatinate title, genre, runtime, imdb_Score, language
   as a string for every Netflix Original.
 * Assign the whole f-string value to `movie_info_row` variable.
 * Add or write that variable into another CSV file as `file_obj.write(movie_info_row)` and result is a CSV file with all Netflix Originals data.
   
 1. Get the unique languages based on genre type.
 ### def language_by_genre(self) -> dict:
-        
+        """
         Create a dictionary of languages by genre type .
 
         Creates and returns a dictionary whose keys are genres in string format
@@ -55,7 +55,7 @@
                 keys: str, representing genre
                 value: list of strings, representing languages corresponding
                 to the genre .
-
+        """
 
 * Create and initialize an empty dictionary and assign it to an accumulator pattern variable `lang_genre`.
 * Taking for loop iterate through each element in `self.movies_info` .
@@ -69,7 +69,7 @@ list of languages in string format as values to that genre.
 2. What is the average runtime for each genre ? 
  
 ### def average_runtime_by_genre(self) -> dict:
-        
+        """
         Create a dictionary of average runtime by genres .
 
         Creates and returns a dictionary whose keys are genres in string format
@@ -81,6 +81,7 @@ list of languages in string format as values to that genre.
                 keys: str, representing genre.
                 value: float, average of runtime corresponding to the same
                     genre type .
+        """
 
 * Create and initialize an empty dictionary `avg_runtime_by_genre` as an accumulator variable.
 * Also initialize a set variable for `genre` and for the runtimes of genre create a list.
@@ -107,20 +108,8 @@ list of languages in string format as values to that genre.
 * Elif `imdb_score` lies in between 8.0 and 9.0 ,return `8.0-9.0 Rating`.
 * If the `imdb_score` greater than that, return `more than 9 rating`.
 
-### def find_range(imdb_score: float):
-        """Group salary into ranges."""
-* Taking nested-if conditional statements group the IMDB scores into various ranges.
-* If `imdb_score` lies in between 1.0 and 4.0 ,return `Below 4 Rating`.
-* Elif `imdb_score` lies in between 4.0 and 5.0 ,return `4.0-5.0 Rating`.
-* Elif `imdb_score` lies in between 5.0 and 6.0 ,return `5.0-6.0 Rating`.
-* Elif `imdb_score` lies in between 6.0 and 7.0 ,return `6.0-7.0 Rating`.
-* Elif `imdb_score` lies in between 7.0 and 8.0 ,return `7.0-8.0 Rating`.
-* Elif `imdb_score` lies in between 8.0 and 9.0 ,return `8.0-9.0 Rating`.
-* If the `imdb_score` greater than that, return `more than 9 rating`.
-
 ### def imdb_score_ranges(self) -> dict:
-
-        
+        """
         Group imdb scores into ranges.
 
         Ranges are (for example) 'Below 4 rating', '4.0-5.0 rating', '5.0-6.0 rating',
@@ -130,6 +119,7 @@ list of languages in string format as values to that genre.
         Returns: dictionary
             keys: str, representing IMDB score ranges
             values: list of strings, with titles in that IMDB score ranges
+        """
 
 * Create and initialize an empty dictionary and assign it to an accumulator pattern variable `imdb_range`.
 * Taking for loop iterate through each element `movie` in `self.movies_info` .
@@ -141,16 +131,17 @@ list of languages in string format as values to that genre.
 where IMDB score range are keys and 
 
 ### def str(self):
-        Create string representation of data.
+       """Create string representation of data."""
 * Return the `self.movie_info` as output string
 
 ### def read_dataset(filename: str) -> PlayerData:
-        Read a CSV text file that holds 5-element records.
+        """Read a CSV text file that holds 5-element records."""
 
 * Create an empty list `movies` as an accumulator.
 * Open the file `filename` in read mode as `file_open`.
 * Read the file using `csv.reader`, taking `,` as delimiter . 
 * Read the entire file by going to every line and take it as `file_read`.
+* `__next__` is used to skip the first row of titles and read from next row .
 * Taking for-loop iterate through each `row` in file_read:
   * Append every `tuple(row)` to `movies` accumulator list with each row data in tuple format.
 * Return `NetflixOriginals(movies)` where movies as object to NetflixOriginals class, as an output

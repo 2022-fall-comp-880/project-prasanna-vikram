@@ -14,7 +14,7 @@ The dataset for the project `Netflix Original Films & IMDB Scores` consists of a
 ## Investigative Questions 
 The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In My project I want to investigate and provide some insights about attributes such as genre, language , IMDB score of various Netflix Original Films.
 
-1. Find the languages based on genre type.  
+1. Find the unique languages based on genre type.  
 
 2. What is the average runtime for each genre ?  
 
@@ -43,7 +43,6 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 * `import os`: The OS module in Python provides functions for creating and removing a directory (folder), fetching its contents, changing and identifying the current directory.
 * `import csv` : The csv module implements classes to read and write tabular data in CSV format.
 * `import unittest` : The framework implemented by unittest supports fixtures, test suites, and a test runner to enable automated testing for your code.
-* `import statistics` : The statistics module provides functions to mathematical statistics of numeric data like mean, median, mode, standard deviation.
 
 ## Dataset Documentation
 

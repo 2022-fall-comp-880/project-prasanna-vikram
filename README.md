@@ -28,4 +28,3 @@
 * `import os`: The OS module in Python provides functions for creating and removing a directory (folder), fetching its contents, changing and identifying the current directory.
 * `import csv` : The csv module implements classes to read and write tabular data in CSV format.
 * `import unittest` : The framework implemented by unittest supports fixtures, test suites, and a test runner to enable automated testing for your code.
-* `import statistics` : The statistics module provides functions to mathematical statistics of numeric data like mean, median, mode, standard deviation.
