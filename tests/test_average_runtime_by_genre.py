@@ -19,36 +19,23 @@ class TestNetflixOriginals(TestCase):
 
     def test_average_runtime_by_genre_one(self):
         """Test using `self.NetflixOriginals_data_1`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_1.txt"
-        read_dataset(input_file)
         actual_res1 = self.NetflixOriginals_data_1.average_runtime_by_genre()
         expected_res1 = {'Teen comedy horror': 85.0}
-        print(actual_res1)
         self.assertDictEqual(actual_res1, expected_res1)
-        # self.fail("TODO: Implement test")
 
     def test_average_runtime_by_genre_five(self):
         """Test using `self.NetflixOriginals_data_5`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_5.txt"
-        read_dataset(input_file)
         actual_res2 = self.NetflixOriginals_data_5.average_runtime_by_genre()
         expected_res2 = {'Drama': 132.0, 'Romantic comedy': 133.0,
                          'Documentary': 39.0, 'Science fiction': 126.0,
                          'Action comedy': 108.0}
-        print(actual_res2)
         self.assertDictEqual(actual_res2, expected_res2)
 
     def test_average_runtime_by_genre_ten(self):
         """Test using `self.NetflixOriginals_data_10`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_10.txt"
-        read_dataset(input_file)
         actual_res3 = self.NetflixOriginals_data_10.average_runtime_by_genre()
         expected_res3 = {'Romantic comedy': 97.0, 'Western': 119.0,
                          'Drama': 136.0, 'Documentary': 84.0, 'Comedy ': 56.0}
-        print(actual_res3)
         self.assertDictEqual(actual_res3, expected_res3)
 
 
