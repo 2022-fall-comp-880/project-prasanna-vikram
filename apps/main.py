@@ -96,7 +96,7 @@ class NetflixOriginals:
         return avg_runtime_by_genre
 
     @staticmethod
-    def find_range(self, imdb_score: float):
+    def find_range(imdb_score: float):
         """Group salary into ranges."""
         if 1 < imdb_score < 4:
             return "Below 4 Rating"
@@ -127,7 +127,7 @@ class NetflixOriginals:
         """
         imdb_range = {}
         for movie in self.movies_info:
-            range1 = NetflixOriginals.find_range(self, float(movie[3]))
+            range1 = NetflixOriginals.find_range(float(movie[3]))
             if range1 in imdb_range:
                 imdb_range[range1].append(movie[0])
             else:
