@@ -35,17 +35,20 @@ class TestNetflixOriginals(TestCase):
     def test_imdb_score_ranges_ten(self):
         """Test using `self.NetflixOriginals_data_10`."""
         actual_res3 = self.NetflixOriginals_data_10.imdb_score_ranges()
-        expected_res3 = {'6.0-7.0 Rating': ['My Own Man', 'Hot Girls Wanted'],
-                         '7.0-8.0 Rating':
-                             ['The Other One: The Long Strange'
-                              ' Trip of Bob Weir',
-                              'What Happened Miss Simone?',
-                              'Keith Richards: Under the Influence',
-                              'Beasts of No Nation'], '4.0-5.0 Rating':
-                             ['Just Say Yes', 'The Ridiculous 6'],
-                         '8.0-9.0 Rating':
-                             ["Winter on Fire: Ukraine Fight for Freedom"],
+        expected_res3 = {'6.0-7.0 Rating': ['My Own Man'],
+                         '7.0-8.0 Rating': ['The Other One: The Long'
+                                            ' Strange Trip of Bob Weir',
+                                            'What Happened Miss Simone?',
+                                            'Keith Richards: Under the'
+                                            ' Influence',
+                                            'Beasts of No Nation'],
+                         'Below 4 Rating': ['Hot Girls Wanted',
+                                            'The Ridiculous 6'],
+                         '4.0-5.0 Rating': ['Just Say Yes'],
+                         '8.0-9.0 Rating': [
+                             'Winter on Fire: Ukraine Fight for Freedom'],
                          '5.0-6.0 Rating': ['A Very Murray Christmas']}
+
         self.assertDictEqual(actual_res3, expected_res3)
 
 
