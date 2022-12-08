@@ -95,6 +95,24 @@ class NetflixOriginals:
             avg_runtime_by_genre[ele] = round(sum(runtimes) / len(runtimes), 2)
         return avg_runtime_by_genre
 
+    @staticmethod
+    def find_range(self, imdb_score: float):
+        """Group salary into ranges."""
+        if 1 < imdb_score < 4:
+            return "Below 4 Rating"
+        elif 4 < imdb_score < 5:
+            return "4.0-5.0 Rating"
+        elif 5 < imdb_score < 6:
+            return "5.0-6.0 Rating"
+        elif 6 < imdb_score < 7:
+            return "6.0-7.0 Rating"
+        elif 7 < imdb_score < 8:
+            return '7.0-8.0 Rating'
+        elif 8 < imdb_score < 9:
+            return '8.0-9.0 Rating'
+        else:
+            return '9.0-10.0 Rating'
+
     def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
@@ -107,6 +125,14 @@ class NetflixOriginals:
         keys: string, representing IMDB score  rating ranges
         values: list of strings, with titles in that IMDB score ranges
         """
+        imdb_range = {}
+        for movie in self.movies_info:
+            range1 = NetflixOriginals.find_range(self, float(movie[3]))
+            if range1 in imdb_range:
+                imdb_range[range1].append(movie[0])
+            else:
+                imdb_range[range1] = [movie[0]]
+        return imdb_range
 
     def str(self):
         """ Create string representation of data."""
@@ -120,6 +146,13 @@ def read_dataset(filename: str) -> NetflixOriginals:
 
     Title of movie, Run time, language , IMDB rating , Genre.
     """
+    movies = []
+    with open(filename) as file:
+        file_read = csv.reader(file, delimiter=',')
+        file_read.__next__()
+        for row in file_read:
+            movies.append(tuple(row))
+    return NetflixOriginals(movies)
 
 
 def main():
@@ -130,7 +163,7 @@ def main():
     print(Netflix_data1.languages_by_genre())
     print(Netflix_data1.str())
     print(Netflix_data1.average_runtime_by_genre())
-    # print(Netflix_data1.imdb_score_ranges())
+    print(Netflix_data1.imdb_score_ranges())
 
 
 if __name__ == '__main__':
