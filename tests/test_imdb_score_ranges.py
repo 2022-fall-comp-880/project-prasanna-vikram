@@ -39,12 +39,12 @@ class TestNetflixOriginals(TestCase):
                          '7.0-8.0 Rating':
                              ['The Other One: The Long Strange'
                               ' Trip of Bob Weir',
-                              'What Happened, Miss Simone?',
+                              'What Happened Miss Simone?',
                               'Keith Richards: Under the Influence',
                               'Beasts of No Nation'], '4.0-5.0 Rating':
                              ['Just Say Yes', 'The Ridiculous 6'],
                          '8.0-9.0 Rating':
-                             ["Winter on Fire: Ukraine's Fight for Freedom"],
+                             ["Winter on Fire: Ukraine Fight for Freedom"],
                          '5.0-6.0 Rating': ['A Very Murray Christmas']}
         self.assertDictEqual(actual_res3, expected_res3)
 
