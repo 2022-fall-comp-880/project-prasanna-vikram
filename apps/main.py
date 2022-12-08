@@ -159,7 +159,7 @@ def read_dataset(filename: str) -> NetflixOriginals:
 def main():
     """Run read_dataset."""
     filename = "C:/Users/unhmguest/comp880/finalproject/" \
-               "project-prasanna-vikram/data/data_1.txt"
+               "project-prasanna-vikram/data/data_5.txt"
     netflix_data1 = read_dataset(filename)
     print(netflix_data1.languages_by_genre())
     print(netflix_data1.str())
