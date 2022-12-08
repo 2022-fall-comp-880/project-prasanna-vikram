@@ -86,7 +86,7 @@ list of languages in string format as values to that genre.
 * Taking for loop iterate through each element `movie_data` in `self.movies_info`:
   * Add the second element of self.movies_info `movie_data[1]` to `genre` set.
 * Taking another for-loop iterate through each element 'ele' in `genre` set:
-  * Clear the runtimes.
+  * Clear the runtimes list .
 * Taking for loop iterate through each element `movie_data` in `self.movies_info`:
   * If the movie_data[1] of `self.movies_info` is equal to `ele`.
   * Append the second element of `self.movies_info` i.e., movie_data[2] to `runtimes` accumulator list.
@@ -96,26 +96,37 @@ list of languages in string format as values to that genre.
 
 3. Get the list of movie titles based on the range of IMDB scores
 
+### def find_range(imdb_score: float):
+        """Group salary into ranges."""
+* Taking nested-if conditional statements group the IMDB scores into various ranges.
+* If `imdb_score` lies in between 1.0 and 4.0 ,return `Below 4 Rating`.
+* Elif `imdb_score` lies in between 4.0 and 5.0 ,return `4.0-5.0 Rating`.
+* Elif `imdb_score` lies in between 5.0 and 6.0 ,return `5.0-6.0 Rating`.
+* Elif `imdb_score` lies in between 6.0 and 7.0 ,return `6.0-7.0 Rating`.
+* Elif `imdb_score` lies in between 7.0 and 8.0 ,return `7.0-8.0 Rating`.
+* Elif `imdb_score` lies in between 8.0 and 9.0 ,return `8.0-9.0 Rating`.
+* If the `imdb_score` greater than that, return `more than 9 rating`.
+
 ### def imdb_score_ranges(self) -> dict:
         
         Group imdb scores into ranges.
 
-        Ranges are (for example) "1.0-4.0 ", "4.0-5.0 ", "5.0-6.0 ",
+        Ranges are (for example) 'Below 4 rating', '4.0-5.0 rating', '5.0-6.0 rating',
         and so on.
         Ranges are determined based on the data-set, and cannot be hard-coded.
 
         Returns: dictionary
-            keys: float, representing IMDB score ranges
+            keys: str, representing IMDB score ranges
             values: list of strings, with titles in that IMDB score ranges
 
-* Taking nested-if conditional statements group the IMDB scores into various ranges.
-* Create and initialize an empty dictionary and assign it to an accumulator pattern variable.
-* Taking for loop iterate through each element in `self.movies_info` .
- * Check if that rating range is present in the accumulator dictionary, if it satisfies:
-   * Append the corresponding list of movie titles in that range in string format as value
-    to that imdb score range in float format which is a key in string format.
+* Create and initialize an empty dictionary and assign it to an accumulator pattern variable `imdb_range`.
+* Taking for loop iterate through each element `movie` in `self.movies_info` .
+ * Check if that rating range `range1` is present in the accumulator dictionary, if it satisfies:
+   * Append the corresponding list of movie titles `movie[0]` in that range in string format as value
+    to that imdb score range as key in string format .
  * Else create a list of movie titles as values and map that to imdb score range as keys in accumulator dictionary variable.
-* After completion of loop iteration finally return the accumulator dictionary variable where IMDB score range are keys and 
+* After completion of loop iteration finally return the accumulator dictionary variable `imdb_range` as output
+where IMDB score range are keys and 
 
 ### def str(self):
         Create string representation of data.
