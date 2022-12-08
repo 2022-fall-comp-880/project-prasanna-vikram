@@ -5,6 +5,7 @@ Authors:
   - https://github.com/lm1298
   - https://github.com/Vikramkumar8915
 """
+import csv
 
 
 class NetflixOriginals:
@@ -27,6 +28,7 @@ class NetflixOriginals:
              Runtime : integer
              language : string
          """
+        self.movies_info = movie_info
 
     def write(self, filename: str):
         """
@@ -37,8 +39,14 @@ class NetflixOriginals:
 
          filename: filename to write data to
         """
+        with open(filename, 'w', encoding='utf8') as file_obj:
+            for Title, Genre, Runtime, IMDB_Score, Language in \
+                self.movies_info:
+                movie_info_row = f'{Title},{Genre},{Runtime},{IMDB_Score},' \
+                                 f'{Language}\n'
+                file_obj.write(movie_info_row)
 
-    def language_by_genre(self) -> dict:
+    def languages_by_genre(self) -> dict:
         """
         Create a dictionary of languages by genre type .
 
@@ -51,6 +59,14 @@ class NetflixOriginals:
                 value: list of strings, representing languages corresponding
                 to the genre .
         """
+        lang_genre = {}
+        for netflix_data in self.movies_info:
+            if netflix_data[1] not in lang_genre:
+                lang_genre[netflix_data[1]] = {netflix_data[4]}
+            else:
+                if netflix_data[4] not in lang_genre[netflix_data[1]]:
+                    lang_genre[netflix_data[1]].add(netflix_data[4])
+        return lang_genre
 
     def average_runtime_by_genre(self) -> dict:
         """
@@ -66,6 +82,18 @@ class NetflixOriginals:
                 value: float, average of runtime corresponding to the same
                     genre type .
         """
+        genre = set()
+        runtimes = []
+        avg_runtime_by_genre = {}
+        for movie_data in self.movies_info:
+            genre.add(movie_data[1])
+        for ele in genre:
+            runtimes.clear()
+            for movie_data in self.movies_info:
+                if movie_data[1] == ele:
+                    runtimes.append(int(movie_data[2]))
+            avg_runtime_by_genre[ele] = round(sum(runtimes) / len(runtimes), 2)
+        return avg_runtime_by_genre
 
     def imdb_score_ranges(self) -> dict:
         """
@@ -76,23 +104,33 @@ class NetflixOriginals:
         Ranges are determined based on the data-set, and cannot be hard-coded.
 
         Returns: dictionary
-        keys: float, representing IMDB score ranges
+        keys: string, representing IMDB score  rating ranges
         values: list of strings, with titles in that IMDB score ranges
         """
 
     def str(self):
         """ Create string representation of data."""
+        return str(self.movies_info)
 
-    @staticmethod
-    def read_dataset(filename: str) -> NetflixOriginals:
-        """Read a CSV text file that holds 5-element records.
 
-        Title of movie, Run time, language , IMDB rating , Genre.
-        """
+@staticmethod
+def read_dataset(filename: str) -> NetflixOriginals:
+    """
+    Read a CSV text file that holds 5-element records.
+
+    Title of movie, Run time, language , IMDB rating , Genre.
+    """
 
 
 def main():
     """Run read_dataset."""
+    filename = "C:/Users/unhmguest/comp880/finalproject/" \
+               "project-prasanna-vikram/data/data_10.txt"
+    Netflix_data1 = read_dataset(filename)
+    print(Netflix_data1.languages_by_genre())
+    print(Netflix_data1.str())
+    print(Netflix_data1.average_runtime_by_genre())
+    # print(Netflix_data1.imdb_score_ranges())
 
 
 if __name__ == '__main__':
