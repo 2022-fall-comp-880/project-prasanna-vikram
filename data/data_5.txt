@@ -1,5 +1,6 @@
+Title,Genre,Runtime,IMDB Score,Language
 The Do-Over,Action comedy,108,5.7,English
-The Fundamentals of Caring,Comedy-drama,97,7.3,English
-Brahman Naman,Comedy,95,5.6,English
-Rebirth,Thriller,100,5,English
-Tallulah,Comedy-drama,111,6.7,English
+Love per Square Foot,Romantic comedy,133,7.2,Hindi
+Night in Paradise,Drama,132,6.7,Korean
+Mute,Science fiction,126,5.5,English
+Ladies First,Documentary,39,7.2,Hindi
