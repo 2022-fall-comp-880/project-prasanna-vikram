@@ -98,17 +98,17 @@ class NetflixOriginals:
     @staticmethod
     def find_range(imdb_score: float):
         """Group salary into ranges."""
-        if 1.0 < imdb_score < 4.0:
+        if 1.0 < imdb_score <= 4.0:
             return "Below 4 Rating"
-        elif 4.0 < imdb_score < 5.0:
+        elif 4.0 < imdb_score <= 5.0:
             return "4.0-5.0 Rating"
-        elif 5.0 < imdb_score < 6.0:
+        elif 5.0 < imdb_score <= 6.0:
             return "5.0-6.0 Rating"
-        elif 6.0 < imdb_score < 7.0:
+        elif 6.0 < imdb_score <= 7.0:
             return "6.0-7.0 Rating"
-        elif 7.0 < imdb_score < 8.0:
+        elif 7.0 < imdb_score <= 8.0:
             return '7.0-8.0 Rating'
-        elif 8.0 < imdb_score < 9.0:
+        elif 8.0 < imdb_score <= 9.0:
             return '8.0-9.0 Rating'
         else:
             return '9.0-10.0 Rating'

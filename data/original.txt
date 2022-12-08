@@ -1,9 +1,9 @@
 Title,Genre,Runtime,IMDB Score,Language
-My Own Man,Documentary,81,6.4,English
 The Other One: The Long Strange Trip of Bob Weir,Documentary,83,7.3,English
 Hot Girls Wanted,Documentary,84,6.1,English
-"What Happened, Miss Simone?",Documentary,84,7.6,English
+"What Happened Miss Simone?",Documentary,84,7.6,English
 Tig,Documentary,80,7.4,English
+My Own Man,Documentary,81,6.4,English
 Keith Richards: Under the Influence,Documentary,81,7.1,English
 Winter on Fire: Ukraine's Fight for Freedom,Documentary,91,8.4,Ukranian
 Beasts of No Nation,Drama,136,7.7,English
