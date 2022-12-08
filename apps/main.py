@@ -1,5 +1,5 @@
 """
-Represent a data-set of information about Netflix Originals
+Represent a data-set of information about Netflix Originals.
 released until 2021.
 Authors:
   - https://github.com/lm1298
@@ -19,7 +19,7 @@ class NetflixOriginals:
 
     def __init__(self, movie_info: list):
         """
-         Create and initialize the class attributes.
+        Create and initialize the class attributes.
 
          Attributes: a list of tuples of:
              title: string
@@ -32,18 +32,18 @@ class NetflixOriginals:
 
     def write(self, filename: str):
         """
-         Write a CSV file with Netflix Originals info.
+        Write a CSV file with Netflix Originals info.
 
-         A record is a row in the file, with 5 columns, corresponding to
-         Title,Genre,Runtime,IMDB Score and Language.
+        A record is a row in the file, with 5 columns, corresponding to
+        Title,Genre,Runtime,IMDB Score and Language.
 
-         filename: filename to write data to
+        filename: filename to write data to
         """
         with open(filename, 'w', encoding='utf8') as file_obj:
-            for Title, Genre, Runtime, IMDB_Score, Language in \
-                self.movies_info:
-                movie_info_row = f'{Title},{Genre},{Runtime},{IMDB_Score},' \
-                                 f'{Language}\n'
+            for title, genre, runtime, imdb_Score, language in \
+                        self.movies_info:
+                movie_info_row = f'{title},{genre},{runtime},{imdb_Score},' \
+                                 f'{language}\n'
                 file_obj.write(movie_info_row)
 
     def languages_by_genre(self) -> dict:
@@ -135,7 +135,7 @@ class NetflixOriginals:
         return imdb_range
 
     def str(self):
-        """ Create string representation of data."""
+        """Create string representation of data."""
         return str(self.movies_info)
 
 
@@ -159,11 +159,11 @@ def main():
     """Run read_dataset."""
     filename = "C:/Users/unhmguest/comp880/finalproject/" \
                "project-prasanna-vikram/data/data_10.txt"
-    Netflix_data1 = read_dataset(filename)
-    print(Netflix_data1.languages_by_genre())
-    print(Netflix_data1.str())
-    print(Netflix_data1.average_runtime_by_genre())
-    print(Netflix_data1.imdb_score_ranges())
+    netflix_data1 = read_dataset(filename)
+    print(netflix_data1.languages_by_genre())
+    print(netflix_data1.str())
+    print(netflix_data1.average_runtime_by_genre())
+    print(netflix_data1.imdb_score_ranges())
 
 
 if __name__ == '__main__':

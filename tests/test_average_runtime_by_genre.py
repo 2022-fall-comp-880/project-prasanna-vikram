@@ -3,7 +3,6 @@
 import unittest
 import os
 from unittest import TestCase
-#from apps.main import NetflixOriginals
 from apps.main import read_dataset
 
 
@@ -47,9 +46,8 @@ class TestNetflixOriginals(TestCase):
         input_file = data_dir + "/data_10.txt"
         read_dataset(input_file)
         actual_res3 = self.NetflixOriginals_data_10.average_runtime_by_genre()
-        expected_res3 = {'Drama': 136.0, 'Comedy ': 56.0,
-                         'Romantic comedy': 97.0, 'Western': 119.0,
-                         'Documentary': 84.0}
+        expected_res3 = {'Romantic comedy': 97.0, 'Western': 119.0,
+                         'Drama': 136.0, 'Documentary': 84.0, 'Comedy ': 56.0}
         print(actual_res3)
         self.assertDictEqual(actual_res3, expected_res3)
 
