@@ -19,38 +19,25 @@ class TestNetflixOriginals(TestCase):
 
     def test_languages_by_genre_one(self):
         """Test using `self.NetflixOriginals_data_1`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_1.txt"
-        read_dataset(input_file)
         actual_res1 = self.NetflixOriginals_data_1.languages_by_genre()
         expected_res1 = {'Teen comedy horror': {'English'}}
-        print(actual_res1)
         self.assertDictEqual(actual_res1, expected_res1)
-        # self.fail("TODO: Implement test")
 
     def test_languages_by_genre_five(self):
         """Test using `self.NetflixOriginals_data_5`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_5.txt"
-        read_dataset(input_file)
         actual_res2 = self.NetflixOriginals_data_5.languages_by_genre()
         expected_res2 = {'Action comedy': {'English'}, 'Romantic comedy':
                          {'Hindi'}, 'Drama': {'Korean'}, 'Science fiction':
                          {'English'},
                          'Documentary': {'Hindi'}}
-        print(actual_res2)
         self.assertDictEqual(actual_res2, expected_res2)
 
     def test_languages_by_genre_ten(self):
         """Test using `self.NetflixOriginals_data_10`."""
-        data_dir = os.path.dirname(__file__) + "/../data"
-        input_file = data_dir + "/data_10.txt"
-        read_dataset(input_file)
         actual_res3 = self.NetflixOriginals_data_10.languages_by_genre()
         expected_res3 = {'Documentary': {'English', 'Ukranian'},
                          'Romantic comedy': {'Dutch'}, 'Drama': {'English'},
                          'Comedy ': {'English'}, 'Western': {'English'}}
-        print(actual_res3)
         self.assertDictEqual(actual_res3, expected_res3)
 
 
