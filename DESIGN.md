@@ -41,7 +41,7 @@
 * Assign the whole f-string value to `movie_info_row` variable.
 * Add or write that variable into another CSV file as `file_obj.write(movie_info_row)` and result is a CSV file with all Netflix Originals data.
   
-1. Find the languages based on genre type.
+1. Get the unique languages based on genre type.
 ### def language_by_genre(self) -> dict:
         
         Create a dictionary of languages by genre type .
@@ -56,12 +56,14 @@
                 to the genre .
 
 
-* Create and initialize an empty dictionary and assign it to an accumulator pattern variable.
-* Taking for loop iterate through each element in self.movie_info .
-* Check if the language is already present in the accumulator dictionary, if it satisfies:
-  * Append the language as value to existing genre which is a key in string format.
-* Else create a new list of languages as value and map that to genre as key in accumulator dictionary variable.
-* After completion of loop iteration finally return the accumulator dictionary variable where genres are keys and list of languages in string format as values to that genre.
+* Create and initialize an empty dictionary and assign it to an accumulator pattern variable `lang_genre`.
+* Taking for loop iterate through each element in `self.movies_info` .
+ * Check if the language `lang` is already present in the accumulator dictionary, if not:
+   * Create a new set of languages as value and map that to genre as key in accumulator dictionary `lang_genre`.
+ * Else if language is not already mapped to genre present in `lang_genre` accumulator dictionary,
+ * Add the language as value to existing genre which is a key in string format.
+* After completion of loop iteration finally return the accumulator dictionary variable `lang_genre`  with genres are keys and 
+list of languages in string format as values to that genre.
 
 2. What is the average runtime for each genre ? 
  
