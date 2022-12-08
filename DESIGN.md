@@ -98,7 +98,7 @@ list of languages in string format as values to that genre.
 
 3. Get the list of movie titles based on the range of IMDB scores
  ### def find_range(imdb_score: float):
-        """Group salary into ranges."""
+        """Group imdb_score into ranges."""
 * Taking nested-if conditional statements group the IMDB scores into various ranges.
 * If `imdb_score` less than 4.0 ,return `Below 4 Rating`.
 * Elif `imdb_score` less than 5.0 ,return `4.0-5.0 Rating`.

@@ -97,7 +97,7 @@ class NetflixOriginals:
 
     @staticmethod
     def find_range(imdb_score: float):
-        """Group salary into ranges."""
+        """Group imdb_score into ranges."""
         if imdb_score <= 4.0:
             return "Below 4 Rating"
         elif imdb_score <= 5.0:
