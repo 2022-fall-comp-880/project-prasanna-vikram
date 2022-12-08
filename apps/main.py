@@ -59,6 +59,14 @@ class NetflixOriginals:
                 value: list of strings, representing languages corresponding
                 to the genre .
         """
+        lang_genre = {}
+        for netflix_data in self.movies_info:
+            if netflix_data[1] not in lang_genre:
+                lang_genre[netflix_data[1]] = {netflix_data[4]}
+            else:
+                if netflix_data[4] not in lang_genre[netflix_data[1]]:
+                    lang_genre[netflix_data[1]].add(netflix_data[4])
+        return lang_genre
 
     def average_runtime_by_genre(self) -> dict:
         """
