@@ -100,12 +100,12 @@ list of languages in string format as values to that genre.
  ### def find_range(imdb_score: float):
         """Group salary into ranges."""
 * Taking nested-if conditional statements group the IMDB scores into various ranges.
-* If `imdb_score` lies in between 1.0 and 4.0 ,return `Below 4 Rating`.
-* Elif `imdb_score` lies in between 4.0 and 5.0 ,return `4.0-5.0 Rating`.
-* Elif `imdb_score` lies in between 5.0 and 6.0 ,return `5.0-6.0 Rating`.
-* Elif `imdb_score` lies in between 6.0 and 7.0 ,return `6.0-7.0 Rating`.
-* Elif `imdb_score` lies in between 7.0 and 8.0 ,return `7.0-8.0 Rating`.
-* Elif `imdb_score` lies in between 8.0 and 9.0 ,return `8.0-9.0 Rating`.
+* If `imdb_score` less than 4.0 ,return `Below 4 Rating`.
+* Elif `imdb_score` less than 5.0 ,return `4.0-5.0 Rating`.
+* Elif `imdb_score` less than 6.0 ,return `5.0-6.0 Rating`.
+* Elif `imdb_score` less than 7.0 ,return `6.0-7.0 Rating`.
+* Elif `imdb_score` less than 8.0 ,return `7.0-8.0 Rating`.
+* Elif `imdb_score` less than 9.0 ,return `8.0-9.0 Rating`.
 * If the `imdb_score` greater than that, return `more than 9 rating`.
 
 ### def imdb_score_ranges(self) -> dict:
