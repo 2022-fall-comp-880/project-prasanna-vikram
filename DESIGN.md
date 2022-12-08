@@ -81,11 +81,18 @@ list of languages in string format as values to that genre.
                 value: float, average of runtime corresponding to the same
                     genre type .
 
-* Create and initialize an empty dictionary as an accumulator variable.
-* Taking for loop iterate through each element in self.movie_info.
-* Import statistics module and using mean() function in statistics module find the average runtime.
-* Map or assign the average runtime in float format as value to corresponding genre as key of accumulator dictionary variable.
-* Iterate the loop until end and return the accumulator dictionary as an output.
+* Create and initialize an empty dictionary `avg_runtime_by_genre` as an accumulator variable.
+* Also initialize a set variable for `genre` and for the runtimes of genre create a list.
+* Taking for loop iterate through each element `movie_data` in `self.movies_info`:
+  * Add the second element of self.movies_info `movie_data[1]` to `genre` set.
+* Taking another for-loop iterate through each element 'ele' in `genre` set:
+  * Clear the runtimes.
+* Taking for loop iterate through each element `movie_data` in `self.movies_info`:
+  * If the movie_data[1] of `self.movies_info` is equal to `ele`.
+  * Append the second element of `self.movies_info` i.e., movie_data[2] to `runtimes` accumulator list.
+  * Continue this loop iteration until the last element of movies_info.
+* Calculate the average_runtime and assign it to dictionary accum variable as `avg_runtime_by_genre[ele]` by finding the average as `round(sum(runtimes) / len(runtimes), 2)`
+* Return the `avg_runtime_by_genre` as output dictionary with `genre` in str format as keys, average runtime of genre in float format as values to that genre.
 
 3. Get the list of movie titles based on the range of IMDB scores
 
