@@ -1,4 +1,5 @@
 
+
 ## DESIGN DOCUMENT
 
 **Contributors** : Lakshmi Prasanna, Vikram
@@ -124,11 +125,11 @@ list of languages in string format as values to that genre.
 ### def read_dataset(filename: str) -> PlayerData:
         Read a CSV text file that holds 5-element records.
 
-* Create an empty list as an accumulator.
+* Create an empty list `movies` as an accumulator.
 * Open the file `filename` in read mode as `file_open`.
-* Iterate each element in  `file_open.readlines()` by taking for loop.
- * perform stripping on the hard code data in txt file and separate each element with `,`, convert te entire data into tuples from.
- * Append the data into accumulator variable  .
-* Close the opened file using `close()` function.
-* Return NetflixOriginals list as an output from hard code data.
-
+* Read the file using `csv.reader`, taking `,` as delimiter . 
+* Read the entire file by going to every line and take it as `file_read`.
+* Taking for-loop iterate through each `row` in file_read:
+  * Append every `tuple(row)` to `movies` accumulator list with each row data in tuple format.
+* Return `NetflixOriginals(movies)` where movies as object to NetflixOriginals class, as an output
+with list of tuples having each row of NetflixOriginals info in tuple format.
