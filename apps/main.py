@@ -112,6 +112,7 @@ class NetflixOriginals:
             return '8.0-9.0 Rating'
         else:
             return '9.0-10.0 Rating'
+
     def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
@@ -124,6 +125,14 @@ class NetflixOriginals:
         keys: string, representing IMDB score  rating ranges
         values: list of strings, with titles in that IMDB score ranges
         """
+        imdb_range = {}
+        for movie in self.movies_info:
+            range1 = NetflixOriginals.find_range(self, float(movie[3]))
+            if range1 in imdb_range:
+                imdb_range[range1].append(movie[0])
+            else:
+                imdb_range[range1] = [movie[0]]
+        return imdb_range
 
     def str(self):
         """ Create string representation of data."""
@@ -146,7 +155,6 @@ def read_dataset(filename: str) -> NetflixOriginals:
     return NetflixOriginals(movies)
 
 
-
 def main():
     """Run read_dataset."""
     filename = "C:/Users/unhmguest/comp880/finalproject/" \
@@ -155,7 +163,7 @@ def main():
     print(Netflix_data1.languages_by_genre())
     print(Netflix_data1.str())
     print(Netflix_data1.average_runtime_by_genre())
-    # print(Netflix_data1.imdb_score_ranges())
+    print(Netflix_data1.imdb_score_ranges())
 
 
 if __name__ == '__main__':
