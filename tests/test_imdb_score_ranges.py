@@ -35,9 +35,9 @@ class TestNetflixOriginals(TestCase):
         read_dataset(input_file)
         actual_res2 = self.NetflixOriginals_data_5.imdb_score_ranges()
         expected_res2 = {'5.0-6.0 Rating': ['The Do-Over', 'Mute'],
-                        '7.0-8.0 Rating': ['Love per Square Foot',
-                                           'Ladies First'],
-                        '6.0-7.0 Rating': ['Night in Paradise']}
+                         '7.0-8.0 Rating': ['Love per Square Foot',
+                                            'Ladies First'],
+                         '6.0-7.0 Rating': ['Night in Paradise']}
         print(actual_res2)
         self.assertDictEqual(actual_res2, expected_res2)
 
