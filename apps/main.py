@@ -1,6 +1,7 @@
 """
 Represent a data-set of information about Netflix Originals.
 released until 2021.
+
 Authors:
   - https://github.com/lm1298
   - https://github.com/Vikramkumar8915
@@ -10,24 +11,24 @@ import csv
 
 class NetflixOriginals:
     """
-        Represent a data-set of Netflix Originals information.
+    Represent a data-set of Netflix Originals information.
 
-        Concepts:
-            Data processing functionality.
-            Reading and writing from CSV files.
-        """
+    Concepts:
+        Data processing functionality.
+        Reading and writing from CSV files.
+    """
 
     def __init__(self, movie_info: list):
         """
         Create and initialize the class attributes.
 
-         Attributes: a list of tuples of:
+        Attributes: a list of tuples of:
              title: string
              genre: string
              IMDB rating: float
              Runtime : integer
              language : string
-         """
+        """
         self.movies_info = movie_info
 
     def write(self, filename: str):
@@ -40,9 +41,9 @@ class NetflixOriginals:
         filename: filename to write data to
         """
         with open(filename, 'w', encoding='utf8') as file_obj:
-            for title, genre, runtime, imdb_Score, language in \
+            for title, genre, runtime, imdb_score, language in \
                         self.movies_info:
-                movie_info_row = f'{title},{genre},{runtime},{imdb_Score},' \
+                movie_info_row = f'{title},{genre},{runtime},{imdb_score},' \
                                  f'{language}\n'
                 file_obj.write(movie_info_row)
 
