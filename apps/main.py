@@ -95,6 +95,23 @@ class NetflixOriginals:
             avg_runtime_by_genre[ele] = round(sum(runtimes) / len(runtimes), 2)
         return avg_runtime_by_genre
 
+    @staticmethod
+    def find_range(self, imdb_score: float):
+        """Group salary into ranges."""
+        if 1 < imdb_score < 4:
+            return "Below 4 Rating"
+        elif 4 < imdb_score < 5:
+            return "4.0-5.0 Rating"
+        elif 5 < imdb_score < 6:
+            return "5.0-6.0 Rating"
+        elif 6 < imdb_score < 7:
+            return "6.0-7.0 Rating"
+        elif 7 < imdb_score < 8:
+            return '7.0-8.0 Rating'
+        elif 8 < imdb_score < 9:
+            return '8.0-9.0 Rating'
+        else:
+            return '9.0-10.0 Rating'
     def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
