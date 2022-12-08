@@ -1,6 +1,5 @@
 """
 Represent a data-set of information about Netflix Originals.
-released until 2021.
 
 Authors:
   - https://github.com/lm1298
