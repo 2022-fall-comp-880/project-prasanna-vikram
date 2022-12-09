@@ -99,19 +99,18 @@ class NetflixOriginals:
     def find_range(imdb_score: float):
         """Group imdb_score into ranges."""
         if imdb_score <= 4.0:
-            return "Below 4 Rating"
+            return "0.0-4.0 Range"
         elif imdb_score <= 5.0:
-            return "4.0-5.0 Rating"
+            return "4.1-5.0 Range"
         elif imdb_score <= 6.0:
-            return "5.0-6.0 Rating"
+            return "5.1-6.0 Range"
         elif imdb_score <= 7.0:
-            return "6.0-7.0 Rating"
+            return "6.1-7.0 Range"
         elif imdb_score <= 8.0:
-            return '7.0-8.0 Rating'
+            return '7.1-8.0 Range'
         elif imdb_score <= 9.0:
-            return '8.0-9.0 Rating'
-        else:
-            return 'more than 9 Rating'
+            return '8.1-9.0 Range'
+        return 'more than 9 Range'
 
     def imdb_score_ranges(self) -> dict:
         """
