@@ -100,19 +100,19 @@ list of languages in string format as values to that genre.
  ### def find_range(imdb_score: float):
         """Group imdb_score into ranges."""
 * Taking nested-if conditional statements group the IMDB scores into various ranges.
-* If `imdb_score` less than 4.0 ,return `Below 4 Rating`.
-* Elif `imdb_score` less than 5.0 ,return `4.0-5.0 Rating`.
-* Elif `imdb_score` less than 6.0 ,return `5.0-6.0 Rating`.
-* Elif `imdb_score` less than 7.0 ,return `6.0-7.0 Rating`.
-* Elif `imdb_score` less than 8.0 ,return `7.0-8.0 Rating`.
-* Elif `imdb_score` less than 9.0 ,return `8.0-9.0 Rating`.
-* If the `imdb_score` greater than that, return `more than 9 rating`.
+* If `imdb_score` less than or equal to 4.0 ,return `0.0-4.0 Range`.
+* Elif `imdb_score` less than or equal to 5.0 ,return `4.1-5.0 Range`.
+* Elif `imdb_score` less than or equal to 6.0 ,return `5.1-6.0 Range`.
+* Elif `imdb_score` less than or equal to 7.0 ,return `6.1-7.0 Range`.
+* Elif `imdb_score` less than or equal to 8.0 ,return `7.1-8.0 Range`.
+* Elif `imdb_score` less than or equal to 9.0 ,return `8.1-9.0 Range`.
+* If the `imdb_score` greater than that, return `more than 9 Range`.
 
 ### def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
 
-        Ranges are (for example) 'Below 4 rating', '4.0-5.0 rating', '5.0-6.0 rating',
+        Ranges are (for example) '1.0-4.0 Range', '4.1-5.0 Range', '5.1-6.0 Range',
         and so on.
         Ranges are determined based on the data-set, and cannot be hard-coded.
 
