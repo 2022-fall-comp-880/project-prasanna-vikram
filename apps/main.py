@@ -41,7 +41,7 @@ class NetflixOriginals:
         """
         with open(filename, 'w', encoding='utf8') as file_obj:
             for title, genre, runtime, imdb_score, language in \
-                        self.movies_info:
+                            self.movies_info:
                 movie_info_row = f'{title},{genre},{runtime},{imdb_score},' \
                                  f'{language}\n'
                 file_obj.write(movie_info_row)
@@ -95,29 +95,12 @@ class NetflixOriginals:
             avg_runtime_by_genre[ele] = round(sum(runtimes) / len(runtimes), 2)
         return avg_runtime_by_genre
 
-    @staticmethod
-    def find_range(imdb_score: float):
-        """Group imdb_score into ranges."""
-        if imdb_score <= 4.0:
-            return "0.0-4.0 Range"
-        elif imdb_score <= 5.0:
-            return "4.1-5.0 Range"
-        elif imdb_score <= 6.0:
-            return "5.1-6.0 Range"
-        elif imdb_score <= 7.0:
-            return "6.1-7.0 Range"
-        elif imdb_score <= 8.0:
-            return '7.1-8.0 Range'
-        elif imdb_score <= 9.0:
-            return '8.1-9.0 Range'
-        return 'more than 9 Range'
-
     def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
 
-        Ranges are (for example) "Below 4 rating ", "4.0-5.0 rating ",
-        "5.0-6.0 rating",
+        Ranges are (for example) "1.0-2.0 rating", "2.0-3.0 rating ",
+        "3.0-4.0 rating",
         and so on.
         Ranges are determined based on the data-set, and cannot be hard-coded.
 
@@ -125,14 +108,46 @@ class NetflixOriginals:
         keys: string, representing IMDB score  rating ranges
         values: list of strings, with titles in that IMDB score ranges
         """
-        imdb_range = {}
-        for movie in self.movies_info:
-            range1 = NetflixOriginals.find_range(float(movie[3]))
-            if range1 in imdb_range:
-                imdb_range[range1].append(movie[0])
+        ranges = {}
+        lst = []
+        for movies in self.movies_info:
+            lst.append(float(movies[3]))
+        min1 = int(min(lst))
+        max1 = int(max(lst))
+        min2 = min1
+
+        while min2 < max1:
+            value1 = "{} - {} rating".format(float(min2), float(min2) + 1)
+            ranges[value1] = []
+            min2 = min2 + 1
+        if min1 == max1:
+            if float(max1) == 10.0:
+                value1 = "{} - {} rating".format(float(min2) - 1, float(min2))
+                ranges[value1] = []
             else:
-                imdb_range[range1] = [movie[0]]
-        return imdb_range
+                value1 = "{} - {} rating".format(float(min2), float(min2) + 1)
+                ranges[value1] = []
+
+        for movies in self.movies_info:
+            value = min1
+            while value < max1:
+                if value <= float(movies[3]) <= (value + 1):
+                    val1 = "{} - {} rating".format(float(value),
+                                                   float(value) + 1)
+                    ranges[val1].append(movies[0])
+                    break
+                else:
+                    value = value + 1
+            if min1 == max1:
+                if float(max1) == 10:
+                    val1 = "{} - {} rating".format(float(min2) - 1,
+                                                   float(min2))
+                    ranges[val1].append(movies[0])
+                else:
+                    val1 = "{} - {} rating".format(float(min2),
+                                                   float(min2) + 1)
+                    ranges[val1].append(movies[0])
+        return ranges
 
     def str(self):
         """Create string representation of data."""
@@ -158,7 +173,7 @@ def read_dataset(filename: str) -> NetflixOriginals:
 def main():
     """Run read_dataset."""
     filename = "C:/Users/unhmguest/comp880/finalproject/" \
-               "project-prasanna-vikram/data/data_5.txt"
+               "project-prasanna-vikram/data/original.txt"
     netflix_data1 = read_dataset(filename)
     print(netflix_data1.languages_by_genre())
     print(netflix_data1.str())

@@ -24,7 +24,7 @@
             language : string
         """
 
-* Initialize `self.movies_info` variable to movie_info by accessing with self parameter.        
+* Initialize `self.movies_info` variable to `movie_info` by accessing with self parameter.        
 
 ### def write(self, filename: str):
         """
@@ -97,38 +97,42 @@ list of languages in string format as values to that genre.
 * Return the `avg_runtime_by_genre` as output dictionary with `genre` in str format as keys, average runtime of genre in float format as values to that genre.
 
 3. Get the list of movie titles based on the range of IMDB scores
- ### def find_range(imdb_score: float):
-        """Group imdb_score into ranges."""
-* Taking nested-if conditional statements group the IMDB scores into various ranges.
-* If `imdb_score` less than or equal to 4.0 ,return `0.0-4.0 Range`.
-* Elif `imdb_score` less than or equal to 5.0 ,return `4.1-5.0 Range`.
-* Elif `imdb_score` less than or equal to 6.0 ,return `5.1-6.0 Range`.
-* Elif `imdb_score` less than or equal to 7.0 ,return `6.1-7.0 Range`.
-* Elif `imdb_score` less than or equal to 8.0 ,return `7.1-8.0 Range`.
-* Elif `imdb_score` less than or equal to 9.0 ,return `8.1-9.0 Range`.
-* If the `imdb_score` greater than that, return `more than 9 Range`.
 
 ### def imdb_score_ranges(self) -> dict:
         """
         Group imdb scores into ranges.
 
-        Ranges are (for example) '1.0-4.0 Range', '4.1-5.0 Range', '5.1-6.0 Range',
+        Ranges are (for example) '1.0-2.0 rating', '2.0-3.0 rating', '3.0-4.0 rating',
         and so on.
         Ranges are determined based on the data-set, and cannot be hard-coded.
 
         Returns: dictionary
-            keys: str, representing IMDB score ranges
+            keys: str, representing IMDB score rating ranges
             values: list of strings, with titles in that IMDB score ranges
         """
 
-* Create and initialize an empty dictionary and assign it to an accumulator pattern variable `imdb_range`.
-* Taking for loop iterate through each element `movie` in `self.movies_info` .
- * Check if that rating range `range1` is present in the accumulator dictionary, if it satisfies:
-   * Append the corresponding list of movie titles `movie[0]` in that range in string format as value
-    to that imdb score range as key in string format .
- * Else create a list of movie titles as values and map that to imdb score range as keys in accumulator dictionary variable.
-* After completion of loop iteration finally return the accumulator dictionary variable `imdb_range` as output
-where IMDB score range are keys and 
+* Initialize a variable `ranges` and assign it with an empty dictionary to store the output.
+* Also initialize `lst` and assign it to empty list to sore the list of titles as values in `ranges` dictionary.
+* Taking for-loop iterate through each element `movies` in `self.movies_info`:
+  * Append rating which is `float[movies[3]]` to `lst` accumulator list.
+* Initialize the variables `mini` and `maxi` for getting the minimum and maximum salaries in `self.movies_info`.
+* Assign `mini` and `maxi` with the minimum and maximum rating values in `lst` and consider `min1` as `min2`.
+* Using `while` loop and if min2 < max1:
+  * Create and initialize `value1`, Format "{} - {} rating" with corresponding values and make this as one of the keys in the dictionary as `ranges[value1]`, make the value for the key as [].
+    * Increment the `min2` value.
+* If `min1` and `max1` are equal and `float(max1)` is 10.0 , Format "{} - {} rating" with corresponding values and make this as one of the keys in the dictionary as `ranges[value1]`, make the value for the key as [].
+* Taking for-loop iterate through each element `movies` in `self.movies_info`:
+  * Assign `min1` to variable `value`.
+  * Using `while` loop and if value < max1:
+    * If `float(movies[3])` greater than or equal to `value` and less than or equal to `value+ 1`.
+      * Create and initialize `val1`, Format "{} - {} rating" with corresponding values and make this as one of the keys in the dictionary as `ranges[value1]`, make the value for the key as [].
+      * Append `movies[0]` to `ranges[val[1]]`.
+    * Else increment the `value`.
+  * If `min1` and `max1` are equal and `float(max1)` is 10.0 , Format "{} - {} rating" with corresponding values and make this as one of the keys in the dictionary as `ranges[value1]`, make the value for the key as [].
+    * Create and initialize `val1`, Format "{} - {} rating" with corresponding values and make this as one of the keys in the dictionary as `ranges[value1]`, make the value for the key as [].
+    * Append `movies[0]` movies title to `ranges[val[1]]`.
+* Compare each value of rating in `self.movies_info` with `mini` and `maxi` using `if` statement.
+* Return `ranges` as output dictionary with rating ranges in string format as keys and the list of movie titles in str format as values to ranges dictionary.
 
 ### def str(self):
        """Create string representation of data."""

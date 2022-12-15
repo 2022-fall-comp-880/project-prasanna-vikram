@@ -582,4 +582,4 @@ Tony Robbins: I Am Not Your Guru,Documentary,116,6.7,English
 Ghosts of Sugar Land,Documentary,21,5.5,English
 Joan Didion: The Center Will Not Hold,Documentary,98,7.5,English
 Strong Island,Documentary,107,6.4,English
-The White Helmets,Documentary,40,7.5,English
+The White Helmets,Documentary,40,1.5,English
