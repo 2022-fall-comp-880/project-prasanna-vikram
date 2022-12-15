@@ -1,6 +1,6 @@
 Title,Genre,Runtime,IMDB Score,Language
-The Do-Over,Action comedy,108,5.7,English
-Love per Square Foot,Romantic comedy,133,7.0,Hindi
-Night in Paradise,Drama,132,6.7,Korean
-Mute,Documentary,126,9.5,English
-Ladies First,Documentary,39,1.2,Hindi
+The Do-Over,Action comedy,108,4.0,English
+Love per Square Foot,Romantic comedy,133,7.7,Hindi
+Night in Paradise,Drama,132,9.6,Korean
+Mute,Documentary,126,6.7,English
+Ladies First,Documentary,39,8.0,Hindi
