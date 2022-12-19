@@ -12,10 +12,14 @@ class TestLanguagesByGenre(TestCase):
     def setUp(self):
         """Create NetflixOriginals objects for the three testing cases."""
         data_dir = os.path.dirname(__file__) + "/../data"
-        self.NetflixOriginals_data_1 = read_dataset(f'{data_dir}/data_1.txt')
-        self.NetflixOriginals_data_5 = read_dataset(f'{data_dir}/data_5.txt')
-        self.NetflixOriginals_data_10 = read_dataset(f'{data_dir}/data_10.txt')
-        self.NetflixOriginals_all = read_dataset(f'{data_dir}/original.txt')
+        self.NetflixOriginals_data_1 = read_dataset(f'{data_dir}/netflix_one'
+                                                    f'.txt')
+        self.NetflixOriginals_data_5 = read_dataset(f'{data_dir}/'
+                                                    f'netflix_five.txt')
+        self.NetflixOriginals_data_10 = read_dataset(f'{data_dir}/'
+                                                     f'netflix_ten.txt')
+        self.NetflixOriginals_all = read_dataset(f'{data_dir}/'
+                                                 f'netflix_original.txt')
 
     def test_languages_by_genre_one(self):
         """Test using `self.NetflixOriginals_data_1`."""
