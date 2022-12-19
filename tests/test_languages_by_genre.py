@@ -6,7 +6,7 @@ from unittest import TestCase
 from apps.main import read_dataset
 
 
-class TestNetflixOriginals(TestCase):
+class TestLanguagesByGenre(TestCase):
     """Test languages_by_genre() method."""
 
     def setUp(self):
