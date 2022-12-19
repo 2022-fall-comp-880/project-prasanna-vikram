@@ -6,8 +6,8 @@ from unittest import TestCase
 from apps.main import read_dataset
 
 
-class TestNetflixOriginals(TestCase):
-    """Test average_runtime_by_genre() method."""
+class TestImdbScoreRanges(TestCase):
+    """Test imdb_score_ranges() method."""
 
     def setUp(self):
         """Create NetflixOriginals objects for the three testing cases."""
