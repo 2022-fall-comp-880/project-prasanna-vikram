@@ -77,11 +77,11 @@ list of languages in string format as values to that genre.
 Unittest library is used for testing the project results. This library can be imported by using import unittest.
 
 ### class TestLanguagesByGenre(TestCase)
-* The class TestLanguagesByGenre(TestCase) has testing methods to test the method languages_by_genre in the class NetflixOriginals.
+The class TestLanguagesByGenre(TestCase) has testing methods to test the method languages_by_genre in the class NetflixOriginals.
 
 def test_languages_by_genre_one(self):
-* This method tests the method languages_by_genre over a single entity data file netflix_one.txt and validates result using assertDictEqual statements.
-* In this method, first read_dataset method is called on the data file and the output of this function call will be a list which is given as an argument to `imdb_score_ranges_one` method.
+* This method tests the method languages_by_genre over a single entity data file `netflix_one.txt` and validates result using assertDictEqual statements.
+* In this method, first read_dataset method is called on the data file and the output of this function call will be a list which is given as an argument to `languages_by_genre` method.
 * The output will be a dictionary which will be stored in actual_result and it will be validated with expected_result using assertDictEqual statements.
 
 def test_languages_by_genre_five(self):
@@ -95,7 +95,7 @@ def test_languages_by_genre_ten(self):
 * The output will be a dictionary which will be stored in actual_result and it will be validated with expected_result using assertDictEqual statements.
 
 ### class TestImdbScoreRanges(TestCase)
-* The class TestImdbScoreRanges(TestCase) has testing methods to test the method `imdb_score_ranges()` in the class NetflixOriginals.
+The class TestImdbScoreRanges(TestCase) has testing methods to test the method `imdb_score_ranges()` in the class NetflixOriginals.
 
 def test_imdb_score_ranges_one(self):
 * This method tests the method imdb_score_ranges over a single entity data file netflix_one.txt and validates result using assertDictEqual statements.
