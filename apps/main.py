@@ -64,8 +64,7 @@ class NetflixOriginals:
             if netflix_data[1] not in lang_genre:
                 lang_genre[netflix_data[1]] = {netflix_data[4]}
             else:
-                if netflix_data[4] not in lang_genre[netflix_data[1]]:
-                    lang_genre[netflix_data[1]].add(netflix_data[4])
+                lang_genre[netflix_data[1]].add(netflix_data[4])
         return lang_genre
 
     def average_runtime_by_genre(self) -> dict:
@@ -173,7 +172,7 @@ def read_dataset(filename: str) -> NetflixOriginals:
 def main():
     """Run read_dataset."""
     filename = "C:/Users/unhmguest/comp880/finalproject/" \
-               "project-prasanna-vikram/data/original.txt"
+               "project-prasanna-vikram/data/data_10.txt"
     netflix_data1 = read_dataset(filename)
     print(netflix_data1.languages_by_genre())
     print(netflix_data1.str())
