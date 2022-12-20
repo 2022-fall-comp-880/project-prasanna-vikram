@@ -32,11 +32,11 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 
 ## Expected Results 
 
-1. Genre as keys in string format and languages in set of strings format for that genre as values are produced as output to languages present in each genre in dictionary format.
+1. The output is Dictionary. Genre as keys in string format and languages in set of strings format for that genre as values are produced as output to languages present in each genre in dictionary format.
 
-2. Average runtime for each genre in float format are taken as value to corresponding Genre as key where genre is in string format is generated in dictionary format as an output to average runtime of each genre.
+2. The output is Dictionary. Average runtime for each genre in float format are taken as value to corresponding Genre as key where genre is in string format is generated in dictionary format as an output to average runtime of each genre.
 
-3. IMDB score ranges in string format as keys and list of titles in string format as values to the keys are generated as output in dictionary format.
+3. The output is Dictionary. IMDB score ranges in string format as keys and list of titles in string format as values to the keys are generated as output in dictionary format.
 
 ## New Python Packages or Modules 
 
