@@ -14,7 +14,7 @@ The dataset for the project `Netflix Original Films & IMDB Scores` consists of a
 ## Investigative Questions 
 The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In My project I want to investigate and provide some insights about attributes such as genre, language , IMDB score of various Netflix Original Films.
 
-1. Find the unique languages based on genre type.  
+1. What are the unique languages present in each genre?  
 
 2. What is the average runtime for each genre ?  
 
@@ -24,7 +24,7 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 
 * The dataset is taken from `https://www.kaggle.com` , the size of dataset is 584 rows. The source for dataset is `https://en.wikipedia.org/wiki/Lists_of_Netflix_original_films`.
 * Luiscorter,a Kaggle contributor and Data analyst created the dataset . He made his recent update in 2021 .
-* I am planning to use data structures like lists and dictionaries in my project to represent the data.
+* I am planning to use data structures like lists,sets and dictionaries in my project to represent the data.
 * Also perform transformations like converting the input data in lists to dictionaries as output and vice versa by writing methods, functions within the class.
 * Create `apps` folder with `main.py` module, with a main method and other methods to implement the investigative questions .
 * Also create a `data` directory which has multiple data files from our project dataset with 1-entry, 5-entry, 10-entry data files in .txt format that is used for unit testing.
@@ -32,9 +32,9 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 
 ## Expected Results 
 
-1. Genre as keys in string format and list of languages for that genre type as values are produced as output to 'Netflix Originals present in each genre' in dictionary format.
+1. Genre as keys in string format and languages in set of strings format for that genre as values are produced as output to languages present in each genre in dictionary format.
 
-2. Average runtime for each genre in float format are taken as value to corresponding Genre as key where genre is in string format.
+2. Average runtime for each genre in float format are taken as value to corresponding Genre as key where genre is in string format is generated in dictionary format as an output to average runtime of each genre.
 
 3. IMDB score ranges in string format as keys and list of titles in string format as values to the keys are generated as output in dictionary format.
 
@@ -46,7 +46,8 @@ The dataset has 5 attributes: Title, Genre, Runtime, IMDB score and language. In
 
 ## Dataset Documentation
 
-* Dataset name : Netflix Original Films & IMDB Scores
+* Dataset name : `Netflix Original Films & IMDB Scores` 
+* It is taken from kaggle.com . The URL for this dataset is `https://www.kaggle.com/datasets/luiscorter/netflix-original-films-imdb-scores`
 * Dataset attributes:
   * `Title` : Name or title of the Netflix original
   * `Genre` : genre or type of Netflix series or movie
