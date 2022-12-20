@@ -41,7 +41,7 @@
 * Assign the whole f-string value to `movie_info_row` variable.
 * Add or write that variable into another CSV file as `file_obj.write(movie_info_row)` and result is a CSV file with all Netflix Originals data.
   
-1. Get the unique languages based on genre type.
+1. What are the unique languages present in each genre?
 ### def language_by_genre(self) -> dict:
         
         Create a dictionary of languages by genre type .
@@ -65,7 +65,7 @@
 * After completion of loop iteration finally return the accumulator dictionary variable `lang_genre`  with genres are keys and 
 list of languages in string format as values to that genre.
 
-2. What is the average runtime for each genre ? 
+2. What is the average runtime of each genre ? 
  
 ### def average_runtime_by_genre(self) -> dict:
         
@@ -135,6 +135,7 @@ list of languages in string format as values to that genre.
 
 ### def str(self):
        Create string representation of data.
+
 * Return the `self.movie_info` as output string
 
 ### def read_dataset(filename: str) -> PlayerData:

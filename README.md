@@ -16,7 +16,7 @@
 
 -------------
 ### Investigation Questions 
-1. Find the languages based on genre type.  
+1. What are the unique languages present in each genre?
 
 2. What is the average runtime for each genre ?  
 
